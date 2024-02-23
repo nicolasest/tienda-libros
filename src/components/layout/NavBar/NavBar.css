@@ -1,0 +1,16 @@
+ul {
+   
+    width: 50%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+li{
+    cursor: pointer;
+}
+
+#NavBarContainer{
+    display: flex;
+    justify-content: flex-end;
+}
