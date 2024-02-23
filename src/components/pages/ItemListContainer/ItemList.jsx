@@ -1,6 +1,20 @@
+import { Item } from "../../common/productCard/Item";
 
-export const ItemList = ({greeting}) => {
+export const ItemList = ({ items }) => {
+  console.log(items);
   return (
-    <h1>{greeting}</h1>
-  )
-}
+    <div>
+      {items.map(({ id, img, title, description, price }) => {
+        return (
+          <Item
+            key={id}
+            img={img}
+            title={title}
+            description={description}
+            price={price}
+          />
+        );
+      })}
+    </div>
+  );
+};
