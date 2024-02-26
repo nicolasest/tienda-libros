@@ -1,10 +1,9 @@
 import { Item } from "../../common/productCard/Item";
 
-export const ItemList = ({ items }) => {
-  console.log(items);
+export const ItemList = ({ products }) => {
   return (
     <div>
-      {items.map(({ id, img, title, description, price }) => {
+      {products.map(({ id, img, title, description, price }) => {
         return (
           <Item
             key={id}
@@ -12,6 +11,7 @@ export const ItemList = ({ items }) => {
             title={title}
             description={description}
             price={price}
+            id={id}
           />
         );
       })}

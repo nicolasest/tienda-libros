@@ -1,25 +1,35 @@
+import { useEffect, useState } from "react";
+import { getProduct } from "../../../asyncMock";
+import { useParams, useNavigate } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
-import { products } from "../../../productsMock";
-import { useState, useEffect } from "react";
 
 export const ItemDetailContainer = () => {
-  const [items, setItems] = useState([]);
+  const { id } = useParams();
+
+  const [item, setItem] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    const tarea = new Promise((resolve, reject) => {
-      resolve(products);
+    getProduct(+id).then((resp) => {
+      setItem(resp);
+      setIsLoading(false);
     });
-    tarea
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  }, [id]);
+
+  const onAdd = (cantidad) => {
+    let infoProducto = {
+      ...item,
+      quantity: cantidad,
+    };
+  };
 
   return (
     <>
-      <ItemDetail items={items} />
+      {isLoading ? (
+        <h2>Cargando producto...</h2>
+      ) : (
+        <ItemDetail item={item} onAdd={onAdd} />
+      )}
     </>
   );
 };
