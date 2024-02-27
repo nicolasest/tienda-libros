@@ -2,21 +2,21 @@ import "./ItemDetail.css";
 export const ItemDetail = ({ item, onAdd }) => {
   return (
     <div>
-      <div className={"containerItemDetail"}>
-        <div className={"containerImage"}>
+      <div className="ItemDetailContainer">
+        <div className="imageContainer">
           <img src={item.img} alt="" />
         </div>
 
-        <div className={"containerDetail"}>
-          <h2 style={{ fontFamily: "monospace" }}>
-            <span style={{ fontSize: "23px" }}>Nombre:</span> {item.title}
+        <div className={"detailContainer"}>
+          <h2>
+            <span >Nombre:</span> {item.title}
           </h2>
-          <h2 style={{ fontFamily: "monospace" }}>
-            <span style={{ fontSize: "23px" }}>Descripcion:</span>{" "}
+          <h2 >
+            <span >Descripcion:</span>{" "}
             {item.description}
           </h2>
-          <h2 style={{ fontFamily: "monospace" }}>
-            <span style={{ fontSize: "23px" }}>Precio:</span> ${item.price}.-
+          <h2 >
+            <span >Precio:</span> ${item.price}
           </h2>
         </div>
       </div>

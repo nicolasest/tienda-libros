@@ -1,27 +1,29 @@
-.containerItemDetail {
-  width: 100%;
+.ItemDetailContainer {
+  margin: auto;
+  width: 80%;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  background-color: aliceblue;
+  box-shadow: 2px 2px 5px gray;
 }
 
-.containerImage {
-  width: 40%;
+.imageContainer {
+  width: 50%;
   display: flex;
   justify-content: center;
 }
-.containerImage > img {
+.imageContainer > img {
   width: 50%;
   height: 300px;
   object-fit: cover;
 }
 
-.containerDetail {
+.detailContainer {
   width: 60%;
   display: flex;
-  justify-content: space-between;
+  
   flex-direction: column;
   height: 300px;
   color: #7f669d;
