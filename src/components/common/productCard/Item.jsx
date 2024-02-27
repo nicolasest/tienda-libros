@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
-
+import "./Item.css";
 export const Item = ({ id, img, title, description, price }) => {
   return (
-    <div style={{ border: "1px solid black", width: "200px" }}>
+    <div  className="cardContainer">
+      <img src={img} alt={title}  />
       <h1>{title}</h1>
+      <h2>{description}</h2>
       <p>{price}</p>
       <Link to={`/item/${id}`}>
         <button>Detalles</button>
       </Link>
 
-      <img src={img} alt={title} style={{ width: "200px" }} />
     </div>
   );
 };
