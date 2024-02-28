@@ -17,6 +17,7 @@ li{
     justify-content: flex-end;
     background-color: lightblue;
     box-shadow: 0px 2px 5px gray ;
+    margin-bottom: 1%;
 }
 .link{
     text-decoration: none;

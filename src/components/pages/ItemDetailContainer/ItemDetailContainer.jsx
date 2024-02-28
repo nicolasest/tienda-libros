@@ -3,6 +3,9 @@ import { getProduct } from "../../../asyncMock";
 import { useParams, useNavigate } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 export const ItemDetailContainer = () => {
   const { id } = useParams();
 
@@ -26,9 +29,11 @@ export const ItemDetailContainer = () => {
   return (
     <>
       {isLoading ? (
-        <h2>Cargando producto...</h2>
+          <Box sx={{ display: 'flex', justifyContent:'center' }}>
+          <CircularProgress />
+        </Box>
       ) : (
-        <ItemDetail item={item} onAdd={onAdd} />
+        <ItemDetail item={item}  />
       )}
     </>
   );

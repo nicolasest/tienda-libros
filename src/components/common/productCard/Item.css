@@ -3,17 +3,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 1fr;
-border: 1px solid gray;
+   max-height: 500px;
+    width: 200px;
 padding: .5%;
 box-shadow: 2px 2px 5px gray;
 background-color: aliceblue;
+opacity: .8;
+}
+.cardContainer:hover{
+    opacity: 1;
+    scale: 1.05;
+    transition: .5s;
 }
 
-
 img {
-    width: 200px;
-    height: 300px;
+    width: 95%;
+    max-height: 60%;
     object-fit: cover;
 }
 
@@ -21,11 +26,21 @@ img {
 h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .description{
     font-family: Arial, Helvetica, sans-serif;
     font-size: .8rem;
-color: green;
+width: 60%;
+text-align: center;
+font-weight: 400;
+}
+.price{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+width: 60%;
+text-align: center;
 }

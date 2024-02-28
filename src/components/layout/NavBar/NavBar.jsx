@@ -11,10 +11,10 @@ export const NavBar = () => {
             <Link className="link" to="/">Home</Link>
           </li>
           <li>
-            <Link className="link" to="/category/Urbanas">Urbanas</Link>
+            <Link className="link" to="/category/Ficcion">Ficción</Link>
           </li>
           <li>
-            <Link className="link" to="/category/Deportivas">Deportivas</Link>
+            <Link className="link" to="/category/Romance">Romance</Link>
           </li>
         </ul>
 

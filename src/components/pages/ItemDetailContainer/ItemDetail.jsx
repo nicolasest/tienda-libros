@@ -1,5 +1,6 @@
+import { ItemCountContainer } from "../../common/ItemCount/ItemCountContainer";
 import "./ItemDetail.css";
-export const ItemDetail = ({ item, onAdd }) => {
+export const ItemDetail = ({ item }) => {
   return (
     <div>
       <div className="ItemDetailContainer">
@@ -8,16 +9,20 @@ export const ItemDetail = ({ item, onAdd }) => {
         </div>
 
         <div className={"detailContainer"}>
-          <h2>
-            <span >Nombre:</span> {item.title}
-          </h2>
-          <h2 >
-            <span >Descripcion:</span>{" "}
+             
+          <h2 className="title">
+          {item.title}
+          </h2 >
+            <h3>Descripcion:</h3>
+          <h4 className="description">
             {item.description}
-          </h2>
+          </h4>
+          
           <h2 >
-            <span >Precio:</span> ${item.price}
+          ${item.price}
           </h2>
+          <p>Agregar al carrito</p>
+        <ItemCountContainer stock={5}/>
         </div>
       </div>
     </div>

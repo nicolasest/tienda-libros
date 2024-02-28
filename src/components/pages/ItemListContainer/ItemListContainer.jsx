@@ -2,6 +2,9 @@ import { getProducts } from "../../../asyncMock";
 import { ItemList } from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 export const ItemListContainer = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
@@ -18,7 +21,7 @@ export const ItemListContainer = () => {
     getProducts().then((res) => {
       if (category) {
         const productsFiltered = res.filter(
-          (product) => product.category === category,
+          (product) => product.category === category
         );
         setProducts(productsFiltered);
       } else {
@@ -29,6 +32,14 @@ export const ItemListContainer = () => {
   }, [category]);
 
   return (
-    <>{loading ? <h1>Cargando...</h1> : <ItemList products={products} />}</>
+    <>
+      {loading ? (
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </Box>
+      ) : (
+        <ItemList products={products} />
+      )}
+    </>
   );
 };
