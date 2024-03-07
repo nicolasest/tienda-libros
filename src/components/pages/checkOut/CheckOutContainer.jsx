@@ -2,22 +2,27 @@ import { useState } from "react"
 import { CheckOut } from "./CheckOut"
 
 export const CheckOutContainer = () => {
-    const [name, setName] = useState("")
-    const [lastName, SetLastName] = useState("")
+    const [user, setUser] = useState({
+        name:"",
+        lastName:""
+    })
+   
     const formSubmit = (e)=>{
         e.preventDefault()
-
-console.log(name)
-console.log(lastName)
+console.log(user)
     }
 
-    const capturaNombre = (event)=>{
-        setName(event.target.value)
+/*     const capturaNombre = (event)=>{
+        setUser({...user, name:event.target.value})
     }
     const capturaApellido = (event)=>{
-        SetLastName(event.target.value)
+        setUser({...user, lastName:event.target.value})
+    } */
+
+    const captura =(e)=>{
+        setUser({...user, [e.target.name]: e.target.value})
     }
   return (
-   <CheckOut formSubmit={formSubmit} capturaNombre={capturaNombre} capturaApellido={capturaApellido}/>
+   <CheckOut formSubmit={formSubmit} captura={captura}/>
   )
 }
