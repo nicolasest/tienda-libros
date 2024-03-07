@@ -12,6 +12,9 @@ export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+const navigate = useNavigate()
+
+
   useEffect(() => {
     getProduct(+id).then((resp) => {
       setItem(resp);
@@ -22,8 +25,12 @@ export const ItemDetailContainer = () => {
   const onAdd = (cantidad) => {
     let infoProducto = {
       ...item,
-      quantity: cantidad,
-    };
+      quantiy: cantidad
+    }
+    
+    console.log(infoProducto)
+
+/* navigate("/cart") */
   };
 
   return (
@@ -33,7 +40,7 @@ export const ItemDetailContainer = () => {
           <CircularProgress />
         </Box>
       ) : (
-        <ItemDetail item={item}  />
+        <ItemDetail item={item} onAdd={onAdd} />
       )}
     </>
   );

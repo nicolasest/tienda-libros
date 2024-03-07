@@ -22,6 +22,7 @@ export const NavBar = () => {
           <CartWidget />
         </Link>
       </div>
+      
     </>
   );
 }; 
