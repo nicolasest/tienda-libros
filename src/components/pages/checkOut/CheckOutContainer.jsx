@@ -8,7 +8,7 @@ export const CheckOutContainer = () => {
     })
    
     const formSubmit = (e)=>{
-        e.preventDefault()
+        e.preventDefault() 
 console.log(user)
     }
 
