@@ -7,12 +7,13 @@ import { ItemDetailContainer } from "./components/pages/ItemDetailContainer/Item
 import { Cart } from "./components/common/cart/Cart";
 import { Layout } from "./components/layout/Layout.jsx";
 import { CheckOutContainer } from "./components/pages/checkOut/CheckOutContainer.jsx";
+import CartContextProvider from "./context/CartContext.jsx";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-       
+       <CartContextProvider>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<ItemListContainer />} />
@@ -23,6 +24,7 @@ function App() {
             <Route path="*" element={<h1>404 Not found</h1>} />
           </Route>
         </Routes>
+        </CartContextProvider>
       </BrowserRouter>
 
       {/*   
