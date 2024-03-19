@@ -1,11 +1,11 @@
 import { ItemCount} from './ItemCount'
 import { useState} from 'react'
 
-export const ItemCountContainer = ({ stock, onAdd }) => {
+export const ItemCountContainer = ({ stock, onAdd, initial=1 }) => {
 let disabled =()=>{
     disabled = true ? disabled = false : disabled = true
 }
-    const [ counter, setCounter] = useState ( 1 )
+    const [ counter, setCounter] = useState ( initial )
 
     const addOne =()=>{
 /* if( counter < stock){

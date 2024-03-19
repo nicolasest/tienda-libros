@@ -3,7 +3,9 @@ import Button from '@mui/material/Button';
 import { CartContext } from "../../../context/CartContext";
 import { useContext } from "react";
 export const Cart = () => {
-  const { cart, clearCart, removeById } = useContext(CartContext);
+  const { cart, clearCart, removeById, getTotalPrice } = useContext(CartContext);
+
+  let total = getTotalPrice()
   return (
     <>
       <div id="Cart">
@@ -22,6 +24,7 @@ export const Cart = () => {
           <button onClick={ ()=> removeById(product.id) }>Eliminar</button>
         </div>
       ))}
+      <h3>El total de la compra es: {total}</h3>
 
  <Button onClick={clearCart} variant="contained" >Limpiar Carrito</Button>
 
