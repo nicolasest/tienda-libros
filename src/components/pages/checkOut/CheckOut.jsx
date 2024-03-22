@@ -7,7 +7,10 @@ export const CheckOut = ({ envioDeFormulario, capturar, orderId }) => {
       {orderId ? (
        <div> 
          <h1>Gracias... tu numero es {orderId} </h1>
-         <Link to="/">Seguir comprando</Link>
+      
+         <Link to="/">
+        <Button variant="contained" >Seguir comprando</Button>
+        </Link>
        </div>
       ) : (
         <form onSubmit={envioDeFormulario}>

@@ -11,13 +11,13 @@ const CartWidget = () => {
   let total = getTotalItems()
 
   return (
-    <>
-    <Link to="/cart">
+   
+
       <Badge badgeContent={total} showZero color="primary">
         <BsFillCartCheckFill size="30px" color="beige" />
       </Badge>
-    </Link>
-    </>
+    
+   
   );
 };
 
