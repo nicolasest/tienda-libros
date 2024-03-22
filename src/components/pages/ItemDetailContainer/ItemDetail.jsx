@@ -22,9 +22,7 @@ export const ItemDetail = ({ item, onAdd, initial }) => {
           ${item.price}
           </h2>
 
-        {
-          initial ? <h3> Ya tenes {initial} cargados</h3> : <h2>No tenes este libro cargado en el carrito</h2>
-          }
+    
         <ItemCountContainer stock={item.stock} onAdd={onAdd} initial={initial}/>
         </div>
       </div>
