@@ -7,12 +7,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBWJrXhFAMSkNeHsyM-jeSeWFEjAFeVWHY",
-  authDomain: "tienda-libros-nico.firebaseapp.com",
-  projectId: "tienda-libros-nico",
-  storageBucket: "tienda-libros-nico.appspot.com",
-  messagingSenderId: "710812082724",
-  appId: "1:710812082724:web:ca4c659c0411f129caeeb1"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_MESSAGING,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
