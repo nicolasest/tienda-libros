@@ -3,8 +3,7 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]); // [ ]---> {} ---> [{1}] ---> [{1}, {3}]
-
+  const [cart, setCart] = useState([]); 
   const addToCart = (product) => {
     let existe = isInCart(product.id);
 
@@ -25,7 +24,7 @@ const CartContextProvider = ({ children }) => {
       setCart([...cart, product]);
     }
 
-console.log(product)
+
   };
 
   const clearCart = () => {

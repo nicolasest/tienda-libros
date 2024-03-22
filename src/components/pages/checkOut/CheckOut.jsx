@@ -1,14 +1,41 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-export const CheckOut = ({formSubmit, captura}) => {
+import { Link } from "react-router-dom";
+export const CheckOut = ({ envioDeFormulario, capturar, orderId }) => {
   return (
-    <>
-    <h1>hl</h1>
-    <form onSubmit={formSubmit}>
-        <input type="text" name='name' placeholder='Ingresa tu nombre' onChange={captura}/>
-        <input type="text" name='lastName' placeholder='Ingresa tu apellido' onChange={captura} />
-        <Button variant="contained" type='submit' > Enviar</Button>
-    </form>
-    </>
-  )
-}
+    <div>
+      {orderId ? (
+       <div> 
+         <h1>Gracias... tu numero es {orderId} </h1>
+         <Link to="/">Seguir comprando</Link>
+       </div>
+      ) : (
+        <form onSubmit={envioDeFormulario}>
+          <input
+            type="text"
+            placeholder="Ingresa tu nombre"
+            onChange={capturar}
+            name="name"
+          />
+
+          <input
+            type="text"
+            placeholder="Ingresa tu telefono"
+            onChange={capturar}
+            name="phone"
+          />
+
+          <input
+            type="text"
+            placeholder="Ingresa tu email"
+            onChange={capturar}
+            name="email"
+          />
+
+          <button type="submit">Comprar</button>
+        </form>
+      )}
+    </div>
+  );
+};
+

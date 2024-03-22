@@ -27,10 +27,7 @@ function App() {
         </CartContextProvider>
       </BrowserRouter>
 
-      {/*   
-      <ItemListContainer />
-      <ItemDetailContainer />
-      <ItemCountContainer stock={7} /> */}
+
     </>
   );
 }
